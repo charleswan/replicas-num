@@ -1,0 +1,9 @@
+apiVersion: web.github.com/v1
+kind: ReplicasNum
+metadata:
+  labels:
+    app.kubernetes.io/name: replicas-num
+    app.kubernetes.io/managed-by: kustomize
+  name: replicasnum-sample
+spec:
+  # TODO(user): Add fields here

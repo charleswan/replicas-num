@@ -1,0 +1,19 @@
+apiVersion: web.github.com/v1
+kind: ReplicasNum
+metadata:
+  name: replicasnum
+  namespace: default
+  labels:
+    app: replicasnum
+    # app.kubernetes.io/name: replicas-num
+    # app.kubernetes.io/managed-by: kustomize
+spec:
+  # TODO(user): Add fields here
+  replicas: 3
+  template:
+    spec:
+      containers:
+      - name: nginx
+        image: 192.168.1.224:5000/nginx:1.0
+        ports:
+        - containerPort: 80

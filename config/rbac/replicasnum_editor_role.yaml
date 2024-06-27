@@ -1,0 +1,27 @@
+# permissions for end users to edit replicasnums.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: replicas-num
+    app.kubernetes.io/managed-by: kustomize
+  name: replicasnum-editor-role
+rules:
+- apiGroups:
+  - web.github.com
+  resources:
+  - replicasnums
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - web.github.com
+  resources:
+  - replicasnums/status
+  verbs:
+  - get
